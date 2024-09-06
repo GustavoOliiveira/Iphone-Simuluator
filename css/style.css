@@ -1,0 +1,770 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Cinzel+Decorative&family=Ibarra+Real+Nova:wght@500&family=Kanit&family=Libre+Baskerville&family=Maven+Pro&family=Montserrat:wght@200;300;500&family=Noto+Sans+JP:wght@100&family=Poppins:wght@100;200;300;500;900&family=Qwitcher+Grypen:wght@400;700&family=Rubik:wght@300&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Tajawal:wght@200&display=swap');
+@import url('http://fonts.cdnfonts.com/css/sf-pro-display?styles=98774,98777,98776,98772,98773,98775,98770,98771,98769');
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+/*-----------------------nav-bar---------------*/
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    height: 90px;
+    background-color: rgb(22, 111, 111);
+    color: white;
+}
+
+
+/*--------section-------------v--------------------container-principal------------------v-------section--------------*/
+
+.conteiner-principal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 847px;
+    background-color: blueviolet;
+    position: absolute;
+}
+/*-----------------------foto-iphone---------------*/
+.ft-iphone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+}
+
+.ft-iphone{
+    width: 900px;
+}
+
+/*--------section----------------v------------------tela-preta---------------------v-------section-------------*/
+
+.tela-preta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    width: 348px;
+    margin-left: 4px;
+    margin-bottom: 2px;
+    border-radius: 40px;
+    height: 696px;
+    position: absolute;
+    background-color: black;
+    transition: opacity 0.5s ease;
+}
+/*--------section----------------v---------barra-superoior-infomacoes---------------v-------section-------------*/
+
+
+.barra-superior-informacoes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 5%;
+    font-size: 12px;
+    position: relative;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+.operadora-cell{
+    width: 33%;
+    padding-left: 30px; 
+    font-size: 15px;
+}
+
+.rede-wifi-bateria{
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30px;
+    font-size: 15px;
+}
+
+.barra-ilha-camera{
+    width: 33%;
+    height: 20px;
+    background-color: black;
+    border-radius: 10px;
+
+}
+
+/*-------section--------------v--------container-conteudo-tela-de-bloqueio--------------v-------section---------*/
+.conteiner-conteudo-tela-de-bloqueio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: 348px;
+    margin-left: 4px;
+    margin-bottom: 2px;
+    border-radius: 40px;
+    height: 695px;
+    overflow: hidden;
+}
+
+/*---------------conteudo-tela-de-bloqueio---------------*/
+.widgets{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: 348px;
+    flex-direction: column;
+    margin-left: 4px;
+    margin-bottom: 2px;
+    border-radius: 40px;
+    height: 695px;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.5s ease;
+    background: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
+    backdrop-filter: blur(10px); /* Aplicando o desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para navegadores WebKit (como Safari) */
+}
+
+.conteudo-widget{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    overflow: scroll;
+}
+
+.primeira-linha-de-widget{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.widget-grande-primeira-linha{
+    width: 100%;
+    height: 90%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.widget-esquerdo-da-primeira-linha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.widget-img-pequena{
+    width: 97%;
+    margin-left: 5px;
+}
+
+.widget-img{
+    width: 97%;
+}
+
+.widget-esquerdo-da-primeira-linha{
+    width: 45%;
+    height: 90%;
+    border-radius: 15px;
+}
+
+.widget-direito-da-primeira-linha{
+    width: 45%;
+    height: 90%;
+    border-radius: 15px;
+    background-color: rgb(120, 141, 141);
+}
+
+
+
+
+/*---------------conteudo-tela-de-bloqueio---------------*/
+
+.conteudo-tela-de-bloqueio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: 348px;
+    flex-direction: column;
+    margin-left: 4px;
+    margin-bottom: 2px;
+    border-radius: 40px;
+    height: 695px;
+    position: relative;
+    background-image: url(/photos/marshmallow-phone-uf2zwen8ht857y74.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: top 0.3s ease; /* Suaviza o movimento */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    top: 0; /* Posição inicial */
+    flex-shrink: 0;
+}
+
+
+/*-----------------------data-notificacoes---------------*/
+
+.data-notificacoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 90%;
+    color: white;
+}
+
+.cadeado-tela-de-bloqueio{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    color: white;
+}
+
+.data-hora{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.dias-da-semana{
+    font-size: 28px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    margin-top: -8px;
+    opacity: 95%;
+}
+.horas{
+    font-size: 100px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 100;
+    opacity: 95%;
+}
+
+
+/*-----------------------central-notificacoes---------------*/
+
+.central-notificacoes{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    transition: bottom 0.5s ease;
+}
+
+.container-notificacao{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    overflow-y: scroll;
+    user-select: none;
+}
+
+.texto-central-notificacao{
+    display: flex;
+    width: 100%;
+    height: 25px;
+    transform: translateY(0%);  /* Começa fora da tela (em baixo) */
+    transition: transform 0.5s ease;  /* Transição suave para subir/descer */
+}
+
+.texto-central-notificacao.show {
+    transform: translateY(-275px);  /* Move para a posição original */
+}
+
+.texto-central-notificacao.hide {
+    transform: translateY(0%);  /* Move de volta para fora da tela */
+}
+
+.texto-editavel{
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: 100;
+    font-family: 'SF Pro Display', sans-serif;
+    text-shadow: 5px;
+}
+
+.notificacao{
+    display: flex;
+    width: 90%;
+    height: 60px;
+    border-radius: 12px;
+    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    z-index: 3;
+    transform: translateY(0%);  /* Começa fora da tela (em baixo) */
+    transition: transform 0.5s ease;  /* Transição suave para subir/descer */
+}
+
+.notificacao.show {
+    transform: translateY(-275px);  /* Move para a posição original */
+}
+
+.notificacao.hide {
+    transform: translateY(0%);  /* Move de volta para fora da tela */
+}
+
+
+.icone-da-notificacao{
+    width: 14%;
+    height: 70%;
+    background-color: black;
+    border-radius: 10px;    
+    margin-left: 10px;
+}
+
+.desc-da-notificacao{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 71%;
+    height: 100%;
+    margin-left: 10px;
+    justify-content: center;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+.horario-da-notificacao{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 15%;
+    height: 70%;
+    margin-right: 10px;
+    font-size: 11px;
+    margin-top: 5px;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+
+/*----------------------lanterna-camera---------------------*/
+
+
+.lanterna-camera{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10%;
+    flex-direction: column;
+}
+
+.container-lanterna-camera{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lanterna{
+    margin-left: 40px;
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    background-color: black;
+    opacity: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.camera{
+    margin-right: 40px;
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    background-color: black;
+    opacity: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-barra-branca-comando{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+.barra-branca-comando{
+    width: 40%;
+    height: 40%;
+    border-radius: 5px;
+    background-color: white;
+}
+
+/*-------------------------------------------*/
+
+.painel-camera{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: 348px;
+    flex-direction: column;
+    margin-left: 4px;
+    margin-bottom: 2px;
+    border-radius: 40px;
+    height: 695px;
+    position: relative;
+    background-color: rgb(170, 12, 12);
+    flex-shrink: 0;
+    transition: transform 0.5s ease;
+}
+
+/* Posições iniciais */
+.widgets {
+    left: 0%; /* Fora da tela à esquerda */
+    z-index: 2; /* Certifique-se que esteja acima da div central */
+}
+
+.conteudo-tela-de-bloqueio {
+    left: 0; /* Sempre centralizada */
+    z-index: 1; /* Fica abaixo das divs laterais quando elas se movem */
+}
+
+.painel-camera {
+    right: 0%; /* Fora da tela à direita */
+    z-index: 2; /* Certifique-se que esteja acima da div central */
+}
+/*--------section----------------v------------------carrossel-de-divs-------------------v-------section-------------*/
+
+
+.carrossel-de-divs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 348px;
+    margin-left: 4px;
+    margin-bottom: 2px;
+    border-radius: 40px;
+    height: 695px;
+    position: absolute;
+    background-image: url(/photos/marshmallow-phone-blur.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+
+.tela-central-dos-apps{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.widget-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: 348px;
+    flex-direction: column;
+    margin-left: 4px;
+    margin-bottom: 2px;
+    border-radius: 40px;
+    height: 695px;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.5s ease;
+    background-color: aqua;
+  }
+
+  .biblioteca{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: 348px;
+    flex-direction: column;
+    margin-left: 4px;
+    margin-bottom: 2px;
+    border-radius: 40px;
+    height: 695px;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.5s ease;
+    background-color: blue;
+  }
+
+
+/*-----------------------------container-caixa-dos-aplicativos----------------*/
+.container-caixa-dos-aplicativos {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 40px 40px 0px 0px;
+    position: relative;
+    overflow: hidden; /* Permite que o ícone cresça para fora dos limites */
+    flex-direction: column;
+}
+
+.barra-de-ferramentas-do-topo{
+    width: 100%;
+    height: 13%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+    position: relative;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+.caixa-dos-aplicativos {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Necessário para o posicionamento absoluto dos ícones */
+}
+
+#caixa-dos-aplicativos-2{
+    display: flex;
+    align-items: flex-start;
+}
+
+.aplicativo-icone{
+    width: 68px;
+    height: 68px;
+    border-radius: 12px;
+}
+
+.img-aplicativo-icone{
+    width: 100%;
+}
+
+figcaption{
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 13px;
+    color: white;
+}
+.container-aplicativo-icone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.icone-aplicativo {
+    width: 68px;
+    height: 68px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
+    backdrop-filter: blur(10px); /* Aplicando o desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para navegadores WebKit (como Safari) */
+    transition: transform 0.3s ease, top 0.3s ease, left 0.3s ease; /* Suave transição */
+    position: relative; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.overlay {
+    position: absolute; /* Posicionamento absoluto dentro do contêiner pai */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
+    backdrop-filter: blur(5px); /* Aplicando o desfoque */
+    -webkit-backdrop-filter: blur(5px); /* Suporte para navegadores WebKit (como Safari) */
+    z-index: 5; /* Define a camada abaixo dos ícones ampliados */
+  }
+
+  .descricao-aplicativo {
+    position: absolute; /* Para posicionar em relação ao contêiner pai */
+    top: 30px; /* Ajuste conforme necessário para ficar acima do ícone */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    color: #fff; /* Cor do texto */
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 15; /* Acima do overlay e ícone */
+    font-size: 30px; /* Tamanho do texto */
+    text-align: center;
+    white-space: nowrap; /* Evita quebra de linha */
+    font-family: 'SF Pro Display', sans-serif;
+  }
+  
+  /* Ajuste para garantir que os ícones ampliados estejam na frente do overlay */
+  .icone-aplicativo.zoom {
+    z-index: 10; /* Coloca o ícone ampliado à frente do overlay */
+    margin-top: 170px;
+  }
+
+#relogio{
+    border-radius: 4px;
+}
+
+.primeira-estante-dentro-do-icone-aplicativo{
+    width: 85%;
+    height: 33.3%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 5px;
+}
+
+.aplicativo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.imagem-do-aplicativo{
+    width: 15px;
+}
+
+.descricao-da-imagem{
+    font-size: 4px;
+    display: none;
+}
+
+.segunda-estante-dentro-do-icone-aplicativo{
+    width: 85%;
+    height: 33.3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+#segunda-estante-dentro-do-icone-aplicativo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 3px;
+}
+
+#segunda-estante-dentro-do-icone-aplicativo-configurações{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 3px;
+}
+
+#primeira-estante-dentro-do-icone-aplicativo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+.terceira-estante-dentro-do-icone-aplicativo{
+    width: 85%;
+    height: 33.3%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+}
+
+.zoom {
+    transform: translate(-50%, -50%) scale(4); /* Aumenta e centraliza o ícone */
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    z-index: 5; /* Garante que fique acima dos outros elementos */
+}
+
+.sega {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background-color: transparent; /* Placeholder visível para manter o espaço */
+}
+
+/*----------------------------container-caixa-pesquisa------------------------------*/
+.container-caixa-pesquisa{
+    width: 100%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caixa-pesquisa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 70%;
+    background-color: aqua;
+    border-radius: 15px;
+}
+/*------------------containeiner-estante-de-aplicativos-inferiores-------------------*/
+.container-estante-de-aplicativos-inferiores{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 40px 40px;
+}
+
+.estante-de-aplicativos-inferiores{
+    width: 95%;
+    height: 80%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-radius: 30px;
+    opacity: 50%;
+}
