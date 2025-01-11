@@ -25,8 +25,6 @@ Este é meu espaço para experimentar, aprender e evoluir! 🧠💪
 
 ## 🖼️ Visual do Projeto
 
-Deixei um espaço abaixo para que você possa adicionar uma captura de tela ou GIF do projeto em funcionamento:
-
 ![iPhone Simulator Screenshot](/fotos/gitHubView.png)
 
 
