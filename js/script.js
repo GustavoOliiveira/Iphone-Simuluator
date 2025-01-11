@@ -1,4 +1,18 @@
+//loader
 
+window.addEventListener('load', () => {
+    // Adiciona uma classe para indicar que a página está carregando
+    document.body.classList.add('loading');
+    
+    // Espera 2 segundos antes de esconder o loader
+    setTimeout(() => {
+        // Remove o loader da tela
+        document.getElementById('loader').style.display = 'none';
+
+        // Remove a classe 'loading' para garantir que o conteúdo aparece
+        document.body.classList.remove('loading');
+    }, 2000); // Tempo de 2 segundos
+});
 
 //animação da tela preta de inicio.
 let telaPreta = document.querySelector(".tela-preta")
@@ -10,6 +24,7 @@ setTimeout(() => {
 setTimeout(() => {
   telaPreta.style.display = "none"
 }, 2100);
+
 
 //--------------------------------------------relogio-da-tela-de-bloqueio-------------------------------------------
 
@@ -52,22 +67,35 @@ let currentPosY = 0;
 let isDraggingAction = false;
 let isSwipeVertical = false;
 let targetDiv = null;
+let isMoved = false; // Variável para verificar se houve movimento
+
+// Função para obter as coordenadas do evento (touch ou mouse)
+function getCoordinates(e) {
+    if (e.touches) {
+        return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    } else {
+        return { x: e.clientX, y: e.clientY };
+    }
+}
 
 // Função para iniciar o arraste
 function startDragAction(e, div) {
-    initialX = e.touches[0].clientX;
-    initialY = e.touches[0].clientY;
+    const coords = getCoordinates(e);
+    initialX = coords.x;
+    initialY = coords.y;
     isDraggingAction = true;
     isSwipeVertical = false;
     targetDiv = div;
+    isMoved = false; // Resetar a variável de movimento
 }
 
-// Função para acompanhar o movimento do dedo
+// Função para acompanhar o movimento
 function handleDragAction(e) {
     if (!isDraggingAction) return;
 
-    currentPosX = e.touches[0].clientX;
-    currentPosY = e.touches[0].clientY;
+    const coords = getCoordinates(e);
+    currentPosX = coords.x;
+    currentPosY = coords.y;
 
     let deltaX = currentPosX - initialX;
     let deltaY = currentPosY - initialY;
@@ -83,18 +111,13 @@ function handleDragAction(e) {
         // Movimento vertical - acionar a função correspondente
         console.log("Movimento vertical detectado");
 
-        // Exemplo de função para deslizar para cima
         if (deltaY < -50) {
             console.log("Deslizou para cima");
-            // Coloque sua função para deslizar para cima aqui
         }
 
-        // Exemplo de função para deslizar para baixo
         if (deltaY > 50) {
             console.log("Deslizou para baixo");
-            // Coloque sua função para deslizar para baixo aqui
         }
-
     } else {
         // Movimento horizontal - seguir com a lógica de arraste das divs
         if (targetDiv === 'widgets' || targetDiv === 'painel-camera') {
@@ -102,6 +125,10 @@ function handleDragAction(e) {
         } else {
             document.querySelector('.widgets').style.transform = `translateX(${Math.min(deltaX - 100, 0)}px)`;
             document.querySelector('.painel-camera').style.transform = `translateX(${Math.max(deltaX + 100, 0)}px)`;
+        }
+
+        if (!isMoved && Math.abs(deltaX) > 10) { // Definir um limite para considerar que houve movimento
+            isMoved = true; // Indicar que houve movimento
         }
     }
 }
@@ -112,30 +139,22 @@ function endDragAction() {
     isDraggingAction = false;
 
     let deltaX = currentPosX - initialX;
-    let deltaY = currentPosY - initialY;
 
-    if (!isSwipeVertical) {
+    if (!isSwipeVertical && isMoved) { // Só aplicar animação se houver movimento
         if (targetDiv === 'widgets' && deltaX > 50) {
-            // Arraste para a direita - mover widgets de volta para fora
             document.querySelector('.widgets').style.transform = 'translateX(-100%)';
         } else if (targetDiv === 'widgets' && deltaX < -50) {
-            // Arraste para a esquerda - manter widgets no centro
             document.querySelector('.widgets').style.transform = 'translateX(0)';
         } else if (targetDiv === 'painel-camera' && deltaX < -50) {
-            // Arraste para a esquerda - mover painel-camera de volta para fora
             document.querySelector('.painel-camera').style.transform = 'translateX(100%)';
         } else if (targetDiv === 'painel-camera' && deltaX > 50) {
-            // Arraste para a direita - manter painel-camera no centro
             document.querySelector('.painel-camera').style.transform = 'translateX(0)';
         } else if (targetDiv === 'conteudo-tela-de-bloqueio') {
             if (deltaX > 50) {
-                // Swipe Right - Mover a div da esquerda sobre a central
                 document.querySelector('.widgets').style.transform = 'translateX(100%)';
             } else if (deltaX < -50) {
-                // Swipe Left - Mover a div da direita sobre a central
                 document.querySelector('.painel-camera').style.transform = 'translateX(-100%)';
             } else {
-                // Nenhum movimento significativo - resetar as posições
                 document.querySelector('.widgets').style.transform = 'translateX(-100%)';
                 document.querySelector('.painel-camera').style.transform = 'translateX(100%)';
             }
@@ -150,8 +169,18 @@ document.querySelector('.conteudo-tela-de-bloqueio').addEventListener('touchstar
 document.querySelector('.widgets').addEventListener('touchstart', (e) => startDragAction(e, 'widgets'));
 document.querySelector('.painel-camera').addEventListener('touchstart', (e) => startDragAction(e, 'painel-camera'));
 
+document.querySelector('.conteudo-tela-de-bloqueio').addEventListener('mousedown', (e) => startDragAction(e, 'conteudo-tela-de-bloqueio'));
+document.querySelector('.widgets').addEventListener('mousedown', (e) => startDragAction(e, 'widgets'));
+document.querySelector('.painel-camera').addEventListener('mousedown', (e) => startDragAction(e, 'painel-camera'));
+
 document.addEventListener('touchmove', handleDragAction);
+document.addEventListener('mousemove', handleDragAction);
+
 document.addEventListener('touchend', endDragAction);
+document.addEventListener('mouseup', endDragAction);
+
+
+
 
 //--------------------------------------------barra-branca-comando-------------------------------------------
 // Seleciona os elementos necessários
